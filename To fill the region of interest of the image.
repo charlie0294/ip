@@ -1,0 +1,59 @@
+Aim: To fill the region of interest of the image.
+Tools Required: MATLAB R2015a
+Commands used:
+clc; → Clears the command window.
+close all; → Closes all figure windows.
+load trees; → Loads the predefined trees image.
+imshow(X, map); → Displays the image using its colormap.
+title('Original Image'); → Adds a title to the displayed image.
+fprintf(...); → Prints a message in the command window.
+roi_mask = roipoly(); → Allows the user to select a region of interest (ROI), returning a binary
+mask.
+filled_image(roi_mask) = 255; → Fills the selected region with white (255).
+figure; → Opens a new figure window.
+subplot(1,2,1); → Creates a subplot (1st position in a 1×2 grid).
+subplot(1,2,2); → Creates another subplot (2nd position).
+imshow(filled_image, map); → Displays the modified image.
+title('Image with Filled Region of Interest'); → Adds a title to the second image.
+Theory: A region of interest (often abbreviated ROI), are samples within a data set identified
+for a particular purpose. The concept of a ROI is commonly used in many applications areas.
+For example, in medical imaging, the boundaries of a tumor may be defined on an image,
+perhaps during different phases of the cardiac cycle, for example, end-systole and end-diastole,
+for the purpose of assessing cardiac function. In geographical information systems i.e GIS, a
+ROI can be taken literally as a polygonal selection from a 2D map. In computer vision and
+optical character recognition, the ROI defines the borders of an object under consideration.
+Within a ROI may lie individual points of interests called POIs.
+Use ROIFILL to fill in a specified polygon in an image. ROIFILL smoothly interpolates inward
+from the pixel values on the boundary of the polygon by solving Laplace's equation. ROIFILL
+can be used, for example, to erase objects in an image.
+J = ROIFILL creates an interactive polygon tool, associated with the image displayed in the
+current figure, called the target image. You place the tool interactively, using the mouse to
+specify the vertices of the polygon. Double-click to add a final vertex to the polygon and close
+the polygon. Right-click to close the polygon without adding a vertex. You can adjust the
+position of the polygon and individual vertices in the polygon by clicking and dragging. To
+delete the polygon, press Backspace, Escape or Delete, or choose the Cancel option from the
+context menu. If the polygon is deleted, all return values are set to empty. After positioning and
+sizing the polygon, fill the region by either double-clicking over the polygon or choosing Fill
+Area from the tool's context menu. ROIFILL returns J, a version of the image with the region
+filled.
+J = ROIFILL (1) displays the image I and creates an interactive polygon tool associated with
+that image.
+J = ROIFILL (I,G,B) fills the polygon specified by C and R, which are equal-length vectors
+containing the rou-column coordinates of the pixels on vertices of the polygon. The kith vertex
+in the pixel (R(k)),C(k)).
+Program:
+clc;
+closeall;
+loadtrees;
+imshow(X,map);
+title('OriginalImage');
+fprintf('Select the region of interest using roipoly.\n');
+roi_mask = roipoly(); % Returns a binary mask of the selected region filled_image = X;
+filled_image (roi_mask) = 255; % Fill the selected region with white figure; subplot(1,2,1);
+imshow(X,map);
+title('OriginalImage');
+subplot(1,2,2);
+imshow(filled_image,map);
+title('Image with Filled Region of Interest');
+Results:
+Conclusion: Thus, we have filled the interested region in the original image.
