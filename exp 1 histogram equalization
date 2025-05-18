@@ -1,0 +1,60 @@
+Aim: To obtain histogram equalization image.
+Objective: To obtain histogram equalization image.
+Tools Required: MATLAB R2015a
+Commands used:
+imread('trees.tif') → Reads an image file into MATLAB as a matrix.
+imshow(I) → Displays the image stored in variable I.
+title('Original Image') → Adds a title to the displayed image.
+imcomplement(I) → Computes the negative (complement) of an image.
+imhist(I, 64) → Displays the histogram of the image I with 64 bins.
+histeq(I) → Performs histogram equalization to enhance image contrast.
+numel(I) → Returns the total number of pixels in image I.
+imhist(I) / n → Computes the normalized histogram (dividing histogram values by total
+pixels).
+plot(p) → Plots the normalized histogram values.
+imadjust(I, [0 1], [0.4 1], 0.5) → Adjusts image contrast using input and output intensity
+mapping.
+maketform('affine', [0.3 0 0; 0.5 1 0; 0 1 1]) → Creates an affine transformation matrix.
+imtransform(I, T) → Applies the affine transformation to image I.
+figure → Creates a new figure window for displaying images or plots.
+imshow(K) → Displays the adjusted image.
+imhist(I_eq, 64) → Displays the histogram of the equalized image.
+Theory: Histogram equalization is a method in image processing of contrast adjustment using
+the image's histogram. Histogram equalization often produces unrealistic effects in
+photographs; however, it is very useful for scientific images like thermal or x-ray images, often
+the same class of images to which one would apply false colour. Also, histogram equalization
+can produce undesirable effects when applied to images with low colour depth. For example,
+if applied to 8-bit image displayed with 8-bit Gray scale it will further reduce colour depth
+(number of unique shades of grey) of the image. Histogram equalization will work the best
+when applied to images with much higher depth than palette size, like continuous data or 16-
+bit gray-scale images.
+Program:
+% Program to obtain histogram equalization concept
+I=imread('trees.tif");
+J-imcomplement(1);
+Cimhist(1,100);
+imshow(1);
+title('original');
+figure,imshow();
+title('complement');
+1=histeq(1);
+figure,imhist(1,64);
+title('equilized');
+figure,imhist(1,64);
+title('histogram'); n=numel(1);
+p=imhist(1)/n;
+Figure,plot(p);
+title('normalized');
+K-imadjust(1,[0,1],[0.4;1],0.5); figure.imshow(K);
+title('adjusted image');
+T-maketform('affine, [.3 0 0;.5 1 0:0 1 1]);
+tformfwd([0,0],T);
+12-imtransform(1,T);
+Figure.imshow(12);
+title('forward image');
+Results:
+Original Image
+Output image
+ Original Histogram Equalised Histogram
+
+Conclusion: Thus, we have obtained the Equalized Histogram from the original image.
