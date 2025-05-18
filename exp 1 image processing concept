@@ -1,0 +1,32 @@
+Aim: To study the Image Processing concept.
+Objective: To study the Image Processing concept.
+Tools Required: MATLAB R2015a
+Commands used:
+imread → Loads an image.
+imcomplement → Computes the negative of an image.
+imshow → Displays an image.
+figure → Opens a new window for displaying an image.
+imadjust → Adjusts image contrast based on intensity mapping.
+Theory: Digital images play an important role both in daily life applications as well as in the
+areas of research technology. Digital image processing refers to the manipulation of an image
+using a processor. The different elements of an image processing system include Image
+acquisition, image storage, image processing and display.
+An image is a two-dimensional function that represents a message of sum characteristics cs
+such as brightness or color of the viewed scene in the first MATLAB program. The command
+used from MATLAB is complement.
+Program:
+% Program to study the image processing concept
+I=imread(pout.tif);
+J=imcomplement(I),
+figure.imshow(I)
+figure.imshow(J)
+K=imadjust(I, [0,0.4],[05,1])
+figure.imshow(K)
+Results:
+Original Image
+Complement Image
+Conclusion: Thus, we have studied how to obtain a complement image from
+the original image.
+
+
+
