@@ -1,0 +1,43 @@
+Aim: Program of sharpen image using gradient mask.
+Objective: Program of sharpen image using gradient mask.
+Tools Required: MATLAB R2015a
+Commands used:
+subplot(2,2,1); → Creates a subplot (1st position in a 2×2 grid).
+ imshow(I); → Displays the original image.
+title('Original Image'); → Adds a title to the original image.
+fspecial('sobel'); → Creates a Sobel filter.
+ imfilter(I, h, 'replicate'); → Applies the Sobel filter to the image.
+ subplot(2,2,2); → Creates a subplot (2nd position).
+ imshow(F); → Displays the filtered image.
+ title('Filtered image by Sobel mask'); → Adds a title.
+ s = 1 + F; → Adds 1 to each pixel value of F.
+ subplot(2,2,4); → Creates a subplot (4th position).
+ imshow(s); → Displays the final processed image.
+ title('Final A/P Image'); → Adds a title to the final image.
+Theory: An image gradient is a directional change in the intensity or color in an image. The
+gradient of the image is one of the fundamental building blocks in image processing. For
+example, the Canny edge detector uses image gradient for edge detection. Mathematically, the
+gradient of a two-variable function (here the image intensity function) at each image point is a
+2D vector with the components given by the derivatives in the horizontal and vertical
+directions. At each image point, the gradient vector points in the direction of largest possible
+intensity increase, and the length of the gradient vector corresponds to the rate of change in
+that direction.
+Program:
+% Program of sharpen image using gradient mask 1-imread('coins.png');
+subplot(2,2,1);
+imshow(1)
+title(Original Image');
+h=fspecial('sobel');
+f=im ilter(1,h, replicate');
+subplot(2,2,2);
+imshow(F)
+title('iltered image by sobel mask);
+s=1+F;
+subplot(2,2,4);
+imshow(s)
+title(Final a/p Image);
+Results:
+Original Image
+Output Image
+Conclusion: Thus, we have performed the sharpening opera on using gradient mask on the
+Original Image.
