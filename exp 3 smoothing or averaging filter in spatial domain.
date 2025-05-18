@@ -1,0 +1,40 @@
+Aim: To Implement smoothing or averaging filter in spatial domain.
+Objective: To Implement smoothing or averaging filter in spatial domain.
+Tools Required: MATLAB R2015a
+Commands used:
+imread('trees.tif') → Reads an image file into MATLAB.
+imshow(I) → Displays the original image.
+title('original image') → Adds a title to the displayed image.
+ones(3,3)/9 → Creates a 3×3 averaging filter (box filter) where each value is 1/9. This is used
+for smoothing an image.
+imfilter(I, f, 'circular') → Applies the smoothing filter f to the image I. The 'circular' option
+ensures circular padding (pixels wrap around the edges).
+subplot(2,2,1) → Divides the figure into a 2×2 grid and selects the first subplot for displaying
+the original image.
+subplot(2,2,2) → Selects the second subplot for displaying the smoothed image.
+imshow(h) → Displays the filtered (smoothed) image.
+title('averaged image') → Adds a title to the smoothed image.
+Theory: Filtering is a technique for modifying or enhancing an image mask or filters will be
+denied. The general process of convolution and correlation will be introduced via an example.
+Also smoothing linear filters such as box and weighted average filters will be introduced.
+In statistic and image processing, to smooth a data set is to create an approximating function
+that attempts to capture important patterns in the data, while leaving out noise or other inescale structures/rapid phenomena. In smoothing, the data points of a signal are modified so
+individual points (presumably because of noise) are reduced, and points that are lower than the
+adjacent points are increased leading to a smoother signal. Smoothing may be used in two
+important ways that can aid in data analysis by being able to extract more information from the
+data as long as the assumption of smoothing is reasonable by being able to provide analyses
+that are both lexible and robust different algorithms are used in smoothing.
+Program:
+% Program for implementation of smoothing or averaging filter in spatial domain
+I=imread('trees.tif");
+subplot(2,2,1);
+imshow();
+title('original image');
+f=ones(3,3)/9;
+h=imfilter(I,f,'circular);
+subplot(2,2,2);
+imshow(h);
+title('averaged image');
+Results:
+Conclusion: Thus, we have performed the smoothing or averaging filter operation on the
+Original Image and we get filtered Image.
